@@ -3,7 +3,7 @@ run-name: pre merge build
 on: pull_request
 jobs:
   execute-test:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - run: mvn test

@@ -1,9 +1,6 @@
 name: pre-merge-build
 run-name: pre merge build
-on:
-  pull_request:
-    paths:
-      - 'src/**'
+on: pull_request
 jobs:
   execute-test:
     runs-on: ubuntu-latest

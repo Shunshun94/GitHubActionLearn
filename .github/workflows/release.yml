@@ -1,0 +1,19 @@
+name: release
+run-name: Release
+on:
+  push:
+    tags:
+      - v[0-9]+.[0-9]+.[0-9]+
+jobs:
+  execute-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: build with maven
+        run: mvn clean compile package
+      - name: archive
+        uses: actions/upload-artifact@v3
+        with:
+          name: archive jar
+          path: target/GitHubActionLearn-*.jar

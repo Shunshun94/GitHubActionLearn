@@ -27,4 +27,4 @@ jobs:
 #          name: archive jar
 #          path: target/GitHubActionLearn-*.jar
       - name: display tag
-        run: echo ${{ TAG##*/ }}
+        run: echo "${{ TAG##*/ }}"

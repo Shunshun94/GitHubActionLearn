@@ -7,7 +7,7 @@ on:
 env:
   GITHUB_TOKEN: ${{ secrets.TOKEN_FOR_RELEASE_GITHUB_CLI }}
 jobs:
-  execute-test:
+  release:
     runs-on: ubuntu-latest
     steps:
       - name: checkout

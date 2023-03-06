@@ -1,0 +1,13 @@
+name: pre-merge-build
+run-name: pre merge build
+on: pull_request
+emv:
+  GITHUB_TOKEN: ${{ secrets.TOKEN_FOR_RELEASE_GITHUB_CLI }}
+jobs:
+  execute-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: view
+        uses: gh repo view Shunshun94/discord-bcdicebot

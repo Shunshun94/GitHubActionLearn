@@ -28,4 +28,4 @@ jobs:
       - name: display tag
         env:
           TAG: ${{ github.ref }}
-        run: echo ${TAG$$*/}
+        run: echo ${TAG##*/}

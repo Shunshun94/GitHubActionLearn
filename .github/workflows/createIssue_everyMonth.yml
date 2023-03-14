@@ -2,7 +2,7 @@ name: Creating Issue every month
 run-name: Monthly issue creation
 on:
   schedule:
-    - cron: '*/3 * * * *'
+    - cron: '*/10 * * * *'
 env:
   GITHUB_TOKEN: ${{ secrets.TOKEN_FOR_RELEASE_GITHUB_CLI }}
 jobs:
@@ -12,4 +12,4 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
       - name: create_issue
-        run: MONTH=`date "+%y%m"`  gh issue create -t "【$MONTH】今月のアクション" -l "automated,actions"
+        run: MONTH=`date "+%y%m"`  gh issue create -t "【$MONTH】今月のアクション" -b "今月もルールに基づいて編集・記入してください" -l "automated,actions"

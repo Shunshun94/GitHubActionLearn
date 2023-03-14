@@ -7,8 +7,10 @@ on:
 env:
   GITHUB_TOKEN: ${{ secrets.TOKEN_FOR_RELEASE_GITHUB_CLI }}
   TAG: ${{ github.ref }}
+  JAR_FILE: 'GitHubActionLearn.jar'
+  ZIP_FILE: 'GitHubActionLearn.zip'
 jobs:
-  execute-test:
+  release:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -21,10 +23,20 @@ jobs:
           cache: maven
       - name: build with maven
         run: mvn clean compile package
-#      - name: archive
-#        uses: actions/upload-artifact@v3
-#        with:
-#          name: archive jar
-#          path: target/GitHubActionLearn-*.jar
-      - name: display tag
-        run: echo ${{ TAG##*/ }}
+      - name: rename jar
+        run: mv target/GitHubActionLearn-*.jar $JAR_FILE
+#     - name: archive
+#       uses: actions/upload-artifact@v3
+#       with:
+#         name: archive jar
+#         path: $JAR_FILE
+#     - name: display tag
+#       env:
+#         TAG: ${{ github.ref }}
+#       run: echo ${TAG##*/}
+      - name: create zip file
+        run: jar -cvfM $ZIP_FILE $JAR_FILE
+      - name: append README.md to zip file
+        run: jar -uvf $ZIP_FILE README.md
+      - name: release zip
+        run: gh release create ${TAG##*/} $ZIP_FILE $JAR_FILE

@@ -12,4 +12,4 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
       - name: create_issue
-        run: MONTH=`date "+%y%m"` | gh issue create -t "【$MONTH】今月のアクション" -l "automated,actions"
+        run: MONTH=`date "+%y%m"`  gh issue create -t "【$MONTH】今月のアクション" -l "automated,actions"

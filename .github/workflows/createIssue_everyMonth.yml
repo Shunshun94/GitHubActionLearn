@@ -11,7 +11,5 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
-      - name: echo
-        run: echo ${{ github.event.schedule }}
       - name: view
         run: gh issue create -t 【`date "+%y%m"`】今月のアクション -l "automated,actions"

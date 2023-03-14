@@ -6,12 +6,12 @@ on:
 env:
   GITHUB_TOKEN: ${{ secrets.TOKEN_FOR_RELEASE_GITHUB_CLI }}
 jobs:
-  creating issue:
+  creating-issue:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
         uses: actions/checkout@v3
       - name: echo
         run: echo ${{ github.event.schedule }}
-     - name: view
-       run: gh issue create -t 【`date "+%y%m"`】今月のアクション -l "automated,actions"
+      - name: view
+        run: gh issue create -t 【`date "+%y%m"`】今月のアクション -l "automated,actions"

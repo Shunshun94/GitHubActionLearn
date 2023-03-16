@@ -2,7 +2,7 @@ name: Check Issue every month
 run-name: Monthly issue check
 on:
   schedule:
-    - cron: '15 1 * * *'
+    - cron: '*/5 * * * *'
 env:
   GITHUB_TOKEN: ${{ secrets.TOKEN_FOR_RELEASE_GITHUB_CLI }}
 jobs:
@@ -12,4 +12,4 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
       - name: list issue
-        run: gh issue list -l "question" -s "open" | grep OPEN && if [ $? -eq 0 ]; then echo notify; fi
+        run: gh issue list -l "question" -s "open" | grep OPEN && if [ $? -eq 0 ]; then echo notify; fi && echo end

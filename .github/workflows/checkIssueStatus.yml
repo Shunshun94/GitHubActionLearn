@@ -1,11 +1,8 @@
 name: Check Issue every month
 run-name: Monthly issue check
 on:
-#  schedule:
-#    - cron: '15 1 * * *'
-  pull_request:
-    paths:
-      - .github/workflows
+  schedule:
+    - cron: '15 1 * * *'
 
 env:
   GITHUB_TOKEN: ${{ secrets.TOKEN_FOR_RELEASE_GITHUB_CLI }}

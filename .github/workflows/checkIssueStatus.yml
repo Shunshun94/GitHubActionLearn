@@ -1,8 +1,8 @@
 name: Check Issue every month
 run-name: Monthly issue check
 on:
-  #schedule:
-  #  - cron: '15 1 * * *'
+#  schedule:
+#    - cron: '15 1 * * *'
   pull_request:
     paths:
       - .github/workflows

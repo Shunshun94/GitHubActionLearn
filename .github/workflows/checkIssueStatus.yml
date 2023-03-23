@@ -7,6 +7,7 @@ on:
     paths:
       - .github/workflows
 
+
 env:
   GITHUB_TOKEN: ${{ secrets.TOKEN_FOR_RELEASE_GITHUB_CLI }}
   DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}

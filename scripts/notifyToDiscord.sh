@@ -1,0 +1,1 @@
+curl -X POST -H "Content-Type: application/json" -d "{\"username\":\"$DISCORD_USERNAME\", \"avatar_url\":\"$DISCORD_ICON\", \"content\": \"notification\"}" $DISCORD_WEBHOOK

@@ -1,8 +1,9 @@
 name: Creating Issue every month
 run-name: Monthly issue creation
 on:
-  schedule:
-    - cron: '0 15 1 * *'
+  pull_request:
+    paths:
+      - .github/workflows/**
 env:
   GITHUB_TOKEN: ${{ secrets.TOKEN_FOR_RELEASE_GITHUB_CLI }}
   ISSUE_LABEL: ${{ vars.ISSUE_LABEL_FOR_GIHUB_ISSUE }}

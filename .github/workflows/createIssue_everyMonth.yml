@@ -14,4 +14,4 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
       - name: create_issue
-        run: MONTH=`date "+%y%m"` && gh issue create -t "【$MONTH】今月のアクション" -b "今月もルールに基づいて編集・記入してください"
+        run: MONTH=`date "+%y%m"` && gh issue create -t "【$MONTH】今月のアクション" -b "今月もルールに基づいて編集・記入してください" -l "$ISSUE_LABEL"

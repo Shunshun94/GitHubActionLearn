@@ -19,3 +19,7 @@ Pull Request を出すと `mvn test` を実施してくれるだけ。
 ## [release](.github/workflows/release.yml)
 
 命名規則に従ったタグを打つと配布用の jar を生成し、それを乗せた release を作成してくれる。
+
+## [handoperation](.github/workflows/handoperation.yml)
+
+ユーザのマニュアル操作きっかけて動く GitHub Actions

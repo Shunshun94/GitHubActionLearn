@@ -1,0 +1,23 @@
+on:
+  workflow_dispatch:
+    inputs:
+      animal:
+        description: 'animal name'
+        required: true
+        default: 'panda'
+        type: string
+      filename:
+        description: 'filename'
+        required: true
+        default: 'README.md'
+        type: string
+
+jobs:
+  show-input:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          echo "animal: ${{ inputs.animal }}"
+          echo "file:   ${{ inputs.filename }}"
+          cat inputs.filename

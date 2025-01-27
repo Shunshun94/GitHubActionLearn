@@ -18,6 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          echo "animal: ${{ inputs.animal }}"
-          echo "file:   ${{ inputs.filename }}"
+          echo "$GITHUB_REF: $GITHUB_REF"
+          echo "animal:      ${{ inputs.animal }}"
+          echo "file:        ${{ inputs.filename }}"
           cat ${{ inputs.filename }}
